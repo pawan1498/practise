@@ -1,6 +1,7 @@
 #include<stdio.h>
 int main()
 {
+    // Optimize it
     int i ,j, n,swap,arr[100];
     printf("enter the no of elements for sorting :");
     scanf("%d",&n);
