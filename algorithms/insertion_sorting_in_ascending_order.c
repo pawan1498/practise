@@ -1,36 +1,39 @@
+
 #include<stdio.h>
+
 int main()
 {
-  int i,j,n,k;
-  int arr[10];
-  printf("enter the number of element n=");
-  scanf("%d",&n);
-  printf("enter the element in array\n");
+    int i,j,num,temp;
+    int arr[10];
+    printf("enter the number of element n=");
+    scanf("%d",&num);
+    printf("enter the element in array\n");
 
-// enter the elements in array
-   for(i=0;i<n;i++)
-{
-     scanf("\n%d",&arr[i]);
-     printf("arr[%d]=%d\n",i,arr[i]);
-}
+    // enter the elements in array
+    for(i=0; i<num; i++)
+    {
+        scanf("\n%d",&arr[i]);
+        printf("arr[%d]=%d\n",i,arr[i]);
+    }
 
-// sorting the array with insertion sorting
-   for(i=1;i<n;i++)
-{
-    k=arr[i];
-    j=i-1;
-    while( k<arr[j] && j>=0 )
-   {
-    arr[j+1]=arr[j];
-    j--;
-   }
-   arr[j+1]=k;
+    // sorting array with insertion sort
+    for(i=1; i<num; i++)
+    {
+        temp=arr[i];                   //reference variable
+        j=i-1;
+        while((temp < arr[j]) && (j >= 0))    // loop for  checking which element is less than reference element
+        {
+            arr[j+1]=arr[j];               // moving array element with adjacent position until reach at check point
+            j--;
+        }
+        arr[j+1]=temp;                 //insert temp at correct position
+    }
 
-}
-// printing the array in descending order
-printf("\n descending order of arr is\n ");
-    for(i=0;i<n;i++)
-    printf("%d\n",arr[i]);
+    // print array in ascending order
+    printf("\n ascending order of arr is\n ");
+
+    for(i=0; i<num; i++)
+        printf("%d\n",arr[i]);
 }
 
 
