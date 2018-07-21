@@ -29,7 +29,7 @@ void enqueue(struct Queue *queue,int data )
    queue -> rear = (queue -> rear + 1)%queue -> capacity ;
    queue -> size = queue -> size +1;
    queue -> array[queue -> rear ] = data ;
-   printf("%d enqueue ",data );
+   printf("%d enqueue\n ",data );
 }
 
 int empty (struct Queue *queue)
@@ -51,5 +51,12 @@ int main()
    struct Queue *queue ;
    queue = create_list(100);
    enqueue(queue ,1);
+   enqueue(queue ,2);
+   enqueue(queue ,3);
+   enqueue(queue ,4);
+   enqueue(queue ,5);
+   enqueue(queue ,6);
+   enqueue(queue ,7);
+
    printf("\n%d dequeue from list",dequeue(queue));
 }
