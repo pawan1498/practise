@@ -17,4 +17,5 @@ int main()
         }                   
         star = star+2;     // star is increased by 2  
         printf("\n");      // initially star is at 1 ,then 3->5->7........
+    }
 }
