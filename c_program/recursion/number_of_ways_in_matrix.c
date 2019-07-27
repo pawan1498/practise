@@ -1,20 +1,24 @@
 #include<stdio.h>
-#define N 4
-#define M 4
+#define N 3
+#define M 3
 int num(int n,int m,int arr[][m]);
 int main()
 {
-    int mat[N][M] = { { 10, 10, 2, 0}, 
-                    { 1, 0, 0, 30 }, 
-                    { 0, 10, 4, 0}, 
-                    { 1, 0, 2, 20 } }; 
- //  printf("%d",mat[0][0]);
-   printf("%d", num(N,M,mat));
+    int mat[N][M] = { { 1, 1, 1}, 
+                    { 1, 0, 0 }, 
+                    { 1, 1, 1}}; 
+ //  printf("%d",mat[3][3]);
+   printf("%d", num(N-1,M-1,mat));
     
 
 }
  int num(int n,int m,int arr[][m])
 {
-	return (m==1 || n==1 || arr[n][m]== 0)? 1:num(m-1,n,arr)+num(m,n-1, arr);
+          if(arr[n][m] == 0 )
+           return 0 ;
+          if(n ==0 || m == 0)
+           return 1 ;
+         
+           return num(m-1,n,arr)+num(m,n-1, arr);
 }
 
