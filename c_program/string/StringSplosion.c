@@ -12,5 +12,7 @@ int main()
                         printf("%c",a[j]);
                 }
         }
+
+
 }
 
